@@ -9,11 +9,17 @@ function Login() {
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        const res = await api.post("/login", {username, password})
-
-        if (res.data.success) {
-            navigate("/welcome")
-        }
+        try {
+            const res = await api.post("/login", { username, password });
+            if (res.data.success) {
+                navigate("/welcome");
+            } else {
+                alert("Login failed");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Login error");
+    }
     }
 
     return (
