@@ -13,10 +13,11 @@ function ProtectedRoute() {
         .finally(() => setLoading(false));
     }, [])
 
-    if (loading) return <p>Loading...</p>
-    if (!auth) return <Navigate to="/login"/>
+    if (loading) return <p>Loading...</p>;
+    if (!auth) return <Navigate to="/login" replace />;
 
-    return auth ? <Outlet /> : <Navigate to="/login"/>
+    return <Outlet />;
+
         
 }
 
