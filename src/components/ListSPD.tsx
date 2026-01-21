@@ -89,7 +89,6 @@ function ListSPD() {
                 
             </div>
             
-
             
             {results.length > 0 && (
                 <div className="container mx-auto overflow-x-auto mt-5">
