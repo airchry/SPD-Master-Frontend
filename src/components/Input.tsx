@@ -142,7 +142,7 @@ function Input() {
         }
 
         try {
-            const res = await api.post("/submit", payload, {
+            const res = await api.post("/save", payload, {
                 responseType: "blob"
             });
 
