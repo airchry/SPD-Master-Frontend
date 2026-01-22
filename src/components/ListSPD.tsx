@@ -117,7 +117,7 @@ function ListSPD() {
                             <td className="px-2 py-1 text-sm">{formatTanggal(item.tanggal_kembali)}</td>
                             <td className="px-2 py-1 text-sm">
                                 <Link to 
-                                ={`spd-master-backend-production.up.railway.app/api/${item.nomor_spd}`}
+                                ={`https://spd-master-backend-production.up.railway.app/api/${item.nomor_spd}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 >Download
