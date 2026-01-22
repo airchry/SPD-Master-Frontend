@@ -6,12 +6,16 @@ function Navbar() {
 
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        api.get("/me")
-        .then(res => setUser(res.data))
-        .catch(() => setUser(null))
-    },[])
+    api.get("/me")
+      .then(res => setUser(res.data))
+      .catch(() => setUser(null))
+      .finally(() => setLoading(false));
+    }, []);
+
+    if (loading) return null;
 
     async function handleLogout() {
         const confirm = window.confirm("Are you sure you want to logout?");
@@ -24,7 +28,6 @@ function Navbar() {
             console.error("Logout failed", err)
         }
     }   
-    
 
     return (
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-center lg:px-8 mx-6">
