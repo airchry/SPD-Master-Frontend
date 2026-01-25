@@ -109,8 +109,8 @@ function ListSPD() {
                         {results.map((item: any, nomor_spd: number) => (
                         <tr key={nomor_spd} className="text-sm text-gray-600 text-center">
                             <td className="px-2 py-1 text-sm">{item.nomor_spd}</td>
-                            <td className="px-2 py-1 text-sm">{item.nama}</td>
-                            <td className="px-2 py-1 text-sm">{item.nip}</td>
+                            <td className="px-2 py-1 text-sm">{item.pegawai.nama}</td>
+                            <td className="px-2 py-1 text-sm">{item.pegawai.nip}</td>
                             <td className="px-2 py-1 text-sm">{item.nama_kegiatan}</td>
                             <td className="px-2 py-1 text-sm">{formatTanggal(item.tanggal_berangkat)}</td>
                             <td className="px-2 py-1 text-sm">{formatTanggal(item.tanggal_kembali)}</td>
